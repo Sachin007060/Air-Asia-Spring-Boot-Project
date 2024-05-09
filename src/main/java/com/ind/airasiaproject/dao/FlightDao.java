@@ -1,5 +1,9 @@
 package com.ind.airasiaproject.dao;
 
-public interface FlightDao {
+import com.ind.airasiaproject.dto.Flight;
 
+public interface FlightDao {
+	
+	public Flight saveFlightDetailsDao(Flight flight);
+	
 }
