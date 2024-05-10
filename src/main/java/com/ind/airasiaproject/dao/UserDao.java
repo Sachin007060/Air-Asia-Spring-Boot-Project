@@ -1,5 +1,11 @@
 package com.ind.airasiaproject.dao;
 
-public interface UserDao {
+import com.ind.airasiaproject.dto.User;
 
+public interface UserDao {
+	
+	public User userRegisterDao(User user);
+
+	public User fetchUserByEmailForLoginDao(String email);
+	
 }
