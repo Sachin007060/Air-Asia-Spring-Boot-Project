@@ -55,21 +55,25 @@ public class UserServiceImpl implements UserService{
 				httpSession.setAttribute("userSession", email);
 				aResponse.setStatusCode(HttpStatus.FOUND.value());
 				aResponse.setMessage("User--logged--In--Successfully");
-				aResponse.setDescription(("User session is created");
+				aResponse.setDescription("User session is created");
 				aResponse.setData(user);
 				return aResponse;
 			}else {
 				aResponse.setStatusCode(HttpStatus.ACCEPTED.value());
-				aResponse.setMessage("User--logged--In--Successfully");
-				aResponse.setDescription(("User session is created");
+				aResponse.setMessage("User--did't--logged--in--Unsuccessfull!");
+				aResponse.setDescription("User Password is wrong please check once..");
 				aResponse.setData(user);
 				return aResponse;
 			}
 			
 		}else {
-			
+			aResponse.setStatusCode(HttpStatus.NOT_ACCEPTABLE.value());
+			aResponse.setMessage("You are not logged in with admin");
+			aResponse.setDescription("");
+			aResponse.setData(null);
+			return aResponse;
 		}
-		return null;
+		
 	}
 
 }

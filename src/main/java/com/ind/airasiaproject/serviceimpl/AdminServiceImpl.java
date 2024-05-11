@@ -45,8 +45,8 @@ public class AdminServiceImpl implements AdminService {
 			}
 		} else {
 			applicationResponse.setStatusCode(HttpStatus.NOT_FOUND.value());
-			applicationResponse.setMessage("Email is Incorrect");
-			applicationResponse.setDescription("Please pass correct Email id and check once");
+			applicationResponse.setMessage("Unsuccessfull!");
+			applicationResponse.setDescription("Unsuccessfull!!");
 			applicationResponse.setData(null);
 			return applicationResponse;
 		}
