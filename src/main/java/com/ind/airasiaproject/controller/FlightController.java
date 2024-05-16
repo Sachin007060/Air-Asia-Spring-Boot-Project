@@ -1,6 +1,10 @@
 package com.ind.airasiaproject.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +24,12 @@ public class FlightController {
 	@PostMapping("/saveFlightDetails")
 	public ApplicationResponse<Flight> saveFlightDetailsContoller(@RequestBody Flight flight) {
 		return flightService.saveFlightDetailsService(flight);
+	}
+	
+	@GetMapping("/getFlightSourceAndDestinationDetails/{source}/{destination}")
+	public ApplicationResponse<List<Flight>> getFlightWithSourceAndDestinationService(@PathVariable String source,
+			@PathVariable String destination) {
+		return flightService.getFlightWithSourceAndDestinationService(source, destination);
 	}
 
 }
