@@ -1,5 +1,7 @@
 package com.ind.airasiaproject.daoimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +19,16 @@ public class FlightDaoImpl implements FlightDao{
 	public Flight saveFlightDetailsDao(Flight flight) {
 		return flightRepository.save(flight);
 	}
+
+	@Override
+	public List<Flight> getFlightWithSourceAndDestinationDao(String source, String destination) {
+List<Flight> flights = flightRepository.findAll();
+		
+		return flights.stream()
+		.filter(a->a.getFlightSource()
+		.equalsIgnoreCase(source)&&a.getFlightDestination().equalsIgnoreCase(destination)).toList();
+	}
+
+	
 
 }

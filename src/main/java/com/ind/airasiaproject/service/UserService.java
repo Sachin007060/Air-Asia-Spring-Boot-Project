@@ -9,5 +9,5 @@ public interface UserService {
 	public ApplicationResponse<User> userRegisterService(User user);
 
 	public ApplicationResponse<User> fetchUserByEmailForLoginService(String email, String password);
-	
+		
 }
